@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS wtb_db;
+
+CREATE DATABASE wtb_db;
