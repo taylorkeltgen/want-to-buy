@@ -7,7 +7,7 @@ const exphbs = require('express-handlebars');
 const app = express();
 const PORT = process.envPORT || 3001;
 
-const sequelize = require("./config/connection");
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store); // Documentation: https://www.npmjs.com/package/connect-session-sequelize
 
 const sess = {
@@ -16,8 +16,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
