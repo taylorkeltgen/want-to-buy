@@ -10,11 +10,15 @@ Listing.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-Listing.hasMany(Category, {
+Listing.belongsToMany(Category, {
+  through: 'listed_category',
+  as: 'listings_category',
   foreignKey: 'category_id',
 });
-Category.hasMany(Listing, {
-  foreignKey: 'category_id',
+Category.belongsToMany(Listing, {
+  through: 'listed_category',
+  as: 'category_listed',
+  foreignKey: 'listing_id',
 });
 
 module.exports = { User, Listing, Category };

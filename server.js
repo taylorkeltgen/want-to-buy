@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // a method inbuilt in express to recognize the incoming Request Object as strings or arrays Source: https://stackoverflow.com/questions/23259168/what-are-express-json-and-express-urlencoded
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(require('./controllers/'));
+app.use(require('./controllers/'));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));

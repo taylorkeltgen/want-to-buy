@@ -17,13 +17,6 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    listing_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'listing',
-        key: 'id',
-      },
-    },
   },
   {
     sequelize,
