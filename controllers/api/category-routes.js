@@ -1,15 +1,11 @@
 const router = require('express').Router();
-const req = require('express/lib/request');
 const { Category, Listing } = require('../../models');
 
 // GET all categories
 router.get('/', (req, res) => {
   // Access our Category model and run .findAll() method)
   Category.findAll({
-      attributes: [
-          'id',
-          'label'
-      ]
+    attributes: ['id', 'label'],
   })
     .then((dbCategoryData) => res.json(dbCategoryData))
     .catch((err) => {
@@ -21,10 +17,7 @@ router.get('/', (req, res) => {
 // GET /api/categories/1
 router.get('/:id', (req, res) => {
   Category.findOne({
-    attributes: [
-        'id',
-        'label'
-    ],
+    attributes: ['id', 'label'],
     where: {
       id: req.params.id,
     },
@@ -61,31 +54,37 @@ router.post('/', (req, res) => {
   Category.create({
     label: req.body.label,
   })
-    .then(dbCategoryData => res.json(dbCategoryData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+    .then((dbCategoryData) => res.json(dbCategoryData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // create a categories
-router.put('/:id', (req,res) => {
+router.put('/:id', (req, res) => {
   Category.update(
-    {label: req.body.label}, 
-    {where: {id: req.params.id}})
-  })
-  .then((dbCategoryData) => {
-    if (!dbCategoryData) {
-      res.status(404).json({ message: 'No category found with this id' });
-      return;
+    {
+      label: req.body.label,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
     }
-    res.json(dbCategoryData);
-  })
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-
+  )
+    .then((dbCategoryData) => {
+      if (!dbCategoryData) {
+        res.status(404).json({ message: 'No category found with this id' });
+        return;
+      }
+      res.json(dbCategoryData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // DELETE /api/category/1
 router.delete('/:id', (req, res) => {
