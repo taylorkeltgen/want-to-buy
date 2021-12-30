@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const req = require('express/lib/request');
 const { Category, Listing } = require('../../models');
-const withAuth = require('../../utils/auth');
 
 // GET all categories
 router.get('/', (req, res) => {
@@ -19,7 +18,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// GET /api/category/1
+// GET /api/categories/1
 router.get('/:id', (req, res) => {
   Category.findOne({
     attributes: [
@@ -56,7 +55,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// POST /api/category
+// POST /api/categories
 router.post('/', (req, res) => {
   // expects {label: 'Electronics'}
   Category.create({
@@ -69,7 +68,7 @@ router.post('/', (req, res) => {
     })
 });
 
-// create a category
+// create a categories
 router.put('/:id', (req,res) => {
   Category.update(
     {label: req.body.label}, 
@@ -86,7 +85,7 @@ router.put('/:id', (req,res) => {
     console.log(err);
     res.status(500).json(err);
   });
-  
+
 
 // DELETE /api/category/1
 router.delete('/:id', (req, res) => {
