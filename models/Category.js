@@ -1,10 +1,10 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-// create our Post model
+// create our Category model
 class Category extends Model {}
 
-// create fields/columns for Post model
+// create fields/columns for Category model
 Category.init(
   {
     id: {
@@ -22,7 +22,7 @@ Category.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: "category",
   }
 );
 
