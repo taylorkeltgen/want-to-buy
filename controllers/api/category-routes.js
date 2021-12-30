@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const req = require('express/lib/request');
 const { Category, Listing } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -68,8 +69,27 @@ router.post('/', (req, res) => {
     })
 });
 
+// create a category
+router.put('/:id', (req,res) => {
+  Category.update(
+    {label: req.body.label}, 
+    {where: {id: req.params.id}})
+  })
+  .then((dbCategoryData) => {
+    if (!dbCategoryData) {
+      res.status(404).json({ message: 'No category found with this id' });
+      return;
+    }
+    res.json(dbCategoryData);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+  
+
 // DELETE /api/category/1
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   Category.destroy({
     where: {
       id: req.params.id,
