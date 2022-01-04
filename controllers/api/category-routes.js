@@ -15,38 +15,31 @@ router.get('/', (req, res) => {
 });
 
 // GET /api/categories/1
-router.get('/:id', (req, res) => {
-  Category.findOne({
-    attributes: ['id', 'label'],
-    where: {
-      id: req.params.id,
-    },
-    include: [
-      {
-        model: Listing,
-        attributes: [
-          'id',
-          'item',
-          'description',
-          'price',
-          'category_id',
-          'created_at',
-        ],
-      },
-    ],
-  })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData) {
-        res.status(404).json({ message: 'No category found with this id' });
-        return;
-      }
-      res.json(dbCategoryData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.get('/:id', (req, res) => {
+//   Category.findOne({
+//     attributes: ['id', 'label'],
+//     where: {
+//       id: req.params.id,
+//     },
+//     include: [
+//       {
+//         model: Listing,
+//         attributes: ['id', 'item'],
+//       },
+//     ],
+//   })
+//     .then((dbCategoryData) => {
+//       if (!dbCategoryData) {
+//         res.status(404).json({ message: 'No category found with this id' });
+//         return;
+//       }
+//       res.json(dbCategoryData);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 // POST /api/categories
 router.post('/', (req, res) => {

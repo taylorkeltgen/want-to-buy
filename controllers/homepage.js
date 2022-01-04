@@ -1,13 +1,10 @@
-// initializing router
 const router = require('express').Router();
-// we need models so that data is rendered
 const { Category, Listing, User } = require('../models');
 const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
-  console.log(req.session);
   Listing.findAll({
-    attributes: ['id', 'item', 'description', 'created_at'],
+    attributes: ['id', 'item', 'description', 'price', 'created_at'],
     include: [
       {
         model: Category,
@@ -32,11 +29,20 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/listing/:id', (req, res) => {
-  Listing.findByPk(req.params.id, {
-    include: [User],
-  });
-  console.log(req);
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
 });
+
+// router.get('/listing/:id', (req, res) => {
+//   Listing.findByPk(req.params.id, {
+//     include: [User],
+//   });
+//   console.log(req);
+// });
 
 module.exports = router;

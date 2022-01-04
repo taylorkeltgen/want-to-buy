@@ -32,7 +32,8 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
+  console.log('============');
   Listing.create({
     item: req.body.item,
     description: req.body.description,
@@ -47,7 +48,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   Listing.update(
     {
       item: req.body.item,
