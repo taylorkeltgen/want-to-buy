@@ -75,7 +75,7 @@ router.get('/listing/:id', (req, res) => {
         return;
       }
       // serialize the data
-      const post = dbListingData.get({ plain: true });
+      const listing = dbListingData.get({ plain: true });
       // pass data to template
       res.render('single-listing', { listing, loggedIn: req.session.loggedIn });
     })
