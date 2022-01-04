@@ -1,31 +1,39 @@
-{{!-- <section>
-  <h2>Create New Post</h2>
+<section>
+  <h2>Create New listing</h2>
 
-  <form class="new-post-form">
+  <form class="new-listing-form">
     <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+      <label for="listing-title">Title</label>
+      <input type="text" id="listing-title" name="listing-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label for="listing-description">Description</label>
+      <textarea name="listing-description" id="listing-description" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="listing-price">Price</label>
+      <input type="text" id="listing-price" name="listing-price" />
+    </div>
+    <div>
+      <label for="category">Select a Category</label>
+      <input type="text" id="category" name="category" />
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
 
-{{#if posts.length}}
+{{#if listings.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2>Your listings</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each listings as |listing|}}
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{> listing-info listing}}
+      <a href="/dashboard/edit/{{listing.id}}" class="edit-link">Edit listing</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script> --}}
+<script src="/javascript/add-listing.js"></script>

@@ -9,15 +9,18 @@ router.get('/', withAuth, (req, res) => {
       // use the ID from the session
       user_id: req.session.user_id,
     },
-    attributes: ['id', 'title', 'post_text', 'created_at'],
+    attributes: [
+      'id',
+      'item',
+      'description',
+      'price',
+      'category_id',
+      'created_at',
+    ],
     include: [
       {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
+        model: Category,
+        attributes: ['id', 'label'],
       },
       {
         model: User,
@@ -25,9 +28,9 @@ router.get('/', withAuth, (req, res) => {
       },
     ],
   })
-    .then((dbPostData) => {
+    .then((dbListingData) => {
       // serialize data before passing to template
-      const listings = dbPostData.map((listing) =>
+      const listings = dbListingData.map((listing) =>
         listing.get({ plain: true })
       );
       res.render('dashboard', { listings, loggedIn: true });
@@ -44,22 +47,18 @@ router.get('/edit/:id', withAuth, (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ['id', 'title', 'post_text', 'created_at'],
+      attributes: [
+        'id',
+        'item',
+        'description',
+        'price',
+        'category_id',
+        'created_at',
+      ],
       include: [
-        // include the Comment model here:
         {
-          model: Comment,
-          attributes: [
-            'id',
-            'comment_text',
-            'post_id',
-            'user_id',
-            'created_at',
-          ],
-          include: {
-            model: User,
-            attributes: ['username'],
-          },
+          model: Category,
+          attributes: ['id', 'label'],
         },
         {
           model: User,
@@ -67,9 +66,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
         },
       ],
     })
-    .then((dbPostData) => {
+    .then((dbListingData) => {
       // serialize data before passing to template
-      const listing = dbPostData.get({ plain: true });
+      const listing = dbListingData.get({ plain: true });
 
       res.render('edit-listing', { listing, loggedIn: true });
     })
