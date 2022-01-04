@@ -4,7 +4,14 @@ const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
   Listing.findAll({
-    attributes: ['id', 'item', 'description', 'price', 'created_at'],
+    attributes: [
+      'id',
+      'item',
+      'description',
+      'price',
+      'category_id',
+      'created_at',
+    ],
     include: [
       {
         model: Category,
@@ -38,11 +45,44 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// router.get('/listing/:id', (req, res) => {
-//   Listing.findByPk(req.params.id, {
-//     include: [User],
-//   });
-//   console.log(req);
-// });
+router.get('/listing/:id', (req, res) => {
+  Listing.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      'id',
+      'item',
+      'description',
+      'price',
+      'category_id',
+      'created_at',
+    ],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'label'],
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbListingData) => {
+      if (!dbListingData) {
+        res.status(404).json({ message: 'No listing found with this id' });
+        return;
+      }
+      // serialize the data
+      const post = dbListingData.get({ plain: true });
+      // pass data to template
+      res.render('single-listing', { listing, loggedIn: req.session.loggedIn });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
