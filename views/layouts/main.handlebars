@@ -71,7 +71,7 @@
               <input type="text" class="form-control" />
             </form>
           </div>
-          <button type="submit" class="btn btn-outline-success">Search</button>
+          <button type="submit" onClick="test()" class="btn btn-outline-success">Search</button>
         </div>
 
       </div>
@@ -80,7 +80,7 @@
     <main>
       {{{body}}}
     </main>
-    <footer class="page-footer text-center text-lg-start mb-o">
+    <footer class="footer text-center text-lg-start mb-o">
       <!-- Copyright -->
       <div class="text-center p-3">
         © 2022 Copyright:
@@ -100,6 +100,11 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     >
+    </script>
+    <script>
+      const test = () => {
+        console.log('PRESSED')
+      }
     </script>
   </body>
 
