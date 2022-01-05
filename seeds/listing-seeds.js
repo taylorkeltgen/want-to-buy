@@ -13,8 +13,8 @@ const listingData = [
     user_id: 1,
     category_id: 2,
     id: 2,
-    item: 'Key USB Flash Drive',
-    description: '2 GB USB 2.0',
+    item: 'USB Flash Drive Key',
+    description: 'LaCie 2 GB USB 2.0',
     price: 7.00,
   },
   {
@@ -46,7 +46,7 @@ const listingData = [
     category_id: 6,
     id: 6,
     item: 'Yorkie Poo',
-    description: 'Designer dog hypoallergenic with black white and hints of brown color',
+    description: 'Very playful potty trained designer dog hypoallergenic with black white and hints of brown color shots up-to-date records included looking for a good home',
     price: 900.00,
   },
 ];
