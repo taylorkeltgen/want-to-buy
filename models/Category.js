@@ -17,6 +17,12 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    image_id: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true,
+      },
+    },
   },
   {
     sequelize,

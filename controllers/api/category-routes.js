@@ -5,7 +5,7 @@ const { Category, Listing } = require('../../models');
 router.get('/', (req, res) => {
   // Access our Category model and run .findAll() method)
   Category.findAll({
-    attributes: ['id', 'label'],
+    attributes: ['id', 'label', 'image_id'],
   })
     .then((dbCategoryData) => res.json(dbCategoryData))
     .catch((err) => {

@@ -1,23 +1,30 @@
-const { Category } = require("../models");
+const { Category } = require('../models');
 
 const categoryData = [
   {
-    label: "Home Goods",
+    label: 'Home Goods',
+    image_id: 'https://want-to-buy.s3.us-east-2.amazonaws.com/globe-icon.png',
   },
   {
-    label: "Electronics",
+    label: 'Electronics',
+    image_id: 'https://want-to-buy.s3.us-east-2.amazonaws.com/phone-icon.png',
   },
   {
-    label: "Automotive",
+    label: 'Automotive',
+    image_id: 'https://want-to-buy.s3.us-east-2.amazonaws.com/car-icon.png',
   },
   {
-    label: "Sports"
+    label: 'Sports',
+    image_id:
+      'https://want-to-buy.s3.us-east-2.amazonaws.com/soccer-ball-icon.png',
   },
   {
-    label: "Apparel"
+    label: 'Apparel',
+    image_id: 'https://want-to-buy.s3.us-east-2.amazonaws.com/shirt-icon.png',
   },
   {
-    label: "Other",
+    label: 'Other',
+    image_id: 'https://want-to-buy.s3.us-east-2.amazonaws.com/dog-icon.png',
   },
 ];
 
