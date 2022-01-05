@@ -11,6 +11,12 @@ const categoryData = [
     label: "Automotive",
   },
   {
+    label: "Sports"
+  },
+  {
+    label: "Apparel"
+  },
+  {
     label: "Other",
   },
 ];
