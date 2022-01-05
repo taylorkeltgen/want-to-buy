@@ -1,28 +1,52 @@
-const { Listing } = require("../models");
+const { Listing } = require('../models');
 
 const listingData = [
   {
     user_id: 2,
     category_id: 1,
     id: 1,
-    item: "Baseball cap",
-    description: "Brand new. Never used",
+    item: 'Baseball cap',
+    description: 'Brand new. Never used',
     price: 9.99,
   },
   {
     user_id: 1,
     category_id: 2,
     id: 2,
-    item: "Mittens",
-    description: "Warm hand made mittens",
+    item: 'Mittens',
+    description: 'Warm hand made mittens',
     price: 5.49,
   },
   {
     user_id: 3,
-    category_id: 4,
+    category_id: 3,
     id: 3,
-    item: "Playing cards",
-    description: "Matte black back",
+    item: 'Playing cards',
+    description: 'Matte black back',
+    price: 20,
+  },
+  {
+    user_id: 3,
+    category_id: 4,
+    id: 4,
+    item: 'Playing cards',
+    description: 'Matte black back',
+    price: 20,
+  },
+  {
+    user_id: 3,
+    category_id: 5,
+    id: 5,
+    item: 'Playing cards',
+    description: 'Matte black back',
+    price: 20,
+  },
+  {
+    user_id: 3,
+    category_id: 6,
+    id: 6,
+    item: 'Playing cards',
+    description: 'Matte black back',
     price: 20,
   },
 ];
