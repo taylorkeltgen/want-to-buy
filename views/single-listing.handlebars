@@ -1,3 +1,12 @@
-{{> listing-info post}}
+<article class="listing">
+  <div class="title">
+    <h4>{{listing.item}}</h4>
+  </div>
+    <div><h5>Category: </h5>{{listing.category.label}}</div>
+    <div><h5>Description: </h5>{{listing.description}} </div>
+    <div><h5>Price: </h5>{{listing.price}}</div>
+    <div><h5>User: </h5>{{listing.user.username}}</div>
+</article>
+
 
 

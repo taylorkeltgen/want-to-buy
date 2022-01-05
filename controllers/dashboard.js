@@ -42,30 +42,29 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-  listing
-    .findOne({
-      where: {
-        id: req.params.id,
+  Listing.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      'id',
+      'item',
+      'description',
+      'price',
+      'category_id',
+      'created_at',
+    ],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'label'],
       },
-      attributes: [
-        'id',
-        'item',
-        'description',
-        'price',
-        'category_id',
-        'created_at',
-      ],
-      include: [
-        {
-          model: Category,
-          attributes: ['id', 'label'],
-        },
-        {
-          model: User,
-          attributes: ['username', 'email'],
-        },
-      ],
-    })
+      {
+        model: User,
+        attributes: ['username', 'email'],
+      },
+    ],
+  })
     .then((dbListingData) => {
       // serialize data before passing to template
       const listing = dbListingData.get({ plain: true });
