@@ -1,12 +1,20 @@
 <div class="row justify-content-center align-items-center pt-5">
   <div class="card pt-4" style="width: 20rem;">
-    <h2 class="fw-bold mb-2 text-uppercase text-center">Login</h2>
-    <p class="text-50 mb-5 text-center">Please enter your login and password</p>
+    <h2 class="fw-bold mb-2 text-uppercase text-center">Sign Up</h2>
+    <p class="text-50 mb-5 text-center">Please enter a username, email, and password</p>
     <div class="form-outline form-white mb-4">
       <form class="signup-form">
       <input
+        type="username"
+        id="username-signup"
+        placeholder="Username"
+        class="form-control form-control-lg"
+      />
+    </div>
+    <div class="form-outline form-white mb-4">
+      <input
         type="email"
-        id="email-login"
+        id="email-signup"
         placeholder="Email"
         class="form-control form-control-lg"
       />
@@ -15,7 +23,7 @@
       <input
         type="password"
         placeholder="Password"
-        id="password-login"
+        id="password-signup"
         class="form-control form-control-lg"
       />
     </div>
@@ -26,4 +34,4 @@
     </form>
   </div>
 </div>
-<script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
