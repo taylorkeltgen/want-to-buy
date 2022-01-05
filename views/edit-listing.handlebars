@@ -1,35 +1,20 @@
-{{!-- <article>
+<article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
   <h2>
-    Edit Post
+    Edit Listing
   </h2>
-  <form class="edit-post-form">
+  <form class="edit-listing-form">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_url post.post_url}})</span>
+      <input name="listing-description" type="text" value="{{listing.description}}" />
     </div>
     <div>
-      {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
-      |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <input name="listing-price" type="text" value="{{listing.price}}" />
     </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
+    <button type="submit">Save listing</button>
+    <button type="button" class="delete-listing-btn">Delete listing</button>
   </form>
 </article>
 
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
 
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-
-{{> comments post.comments}}
-
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script> --}}
+<script src="/javascript/edit-listing.js"></script>
+<script src="/javascript/delete-listing.js"></script>

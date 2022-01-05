@@ -45,7 +45,7 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/listing/:id', (req, res) => {
+router.get('/listings/:id', (req, res) => {
   Listing.findOne({
     where: {
       id: req.params.id,
