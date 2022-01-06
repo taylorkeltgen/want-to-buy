@@ -48,15 +48,13 @@
             {{#if loggedIn}}
               <li class="nav-item active">
                 <a href="/dashboard" class="nav-link">
-                  My Dashboard
+                  Dashboard
                 </a>
               </li>
-              <li class="nav-item">
-                <button
-                  type="button"
-                  id="logout"
-                  class="btn btn-dark"
-                >Logout</button>
+              <li class="nav-item active">
+                <a href="/logout" class="nav-link" id="logout">
+                  Logout
+                </a>
               </li>
             {{else}}
               <li class="nav-item active">
@@ -71,7 +69,11 @@
               <input type="text" class="form-control" />
             </form>
           </div>
-          <button type="submit" onClick="test()" class="btn btn-outline-success">Search</button>
+          <button
+            type="submit"
+            onClick="test()"
+            class="btn btn-outline-success"
+          >Search</button>
         </div>
 
       </div>
@@ -102,9 +104,7 @@
     >
     </script>
     <script>
-      const test = () => {
-        console.log('PRESSED')
-      }
+      const test = () => { console.log('PRESSED') }
     </script>
   </body>
 
