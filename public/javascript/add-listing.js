@@ -6,6 +6,9 @@ async function newFormHandler(event) {
     'textarea[name="listing-description"]'
   ).value;
   const price = document.querySelector('input[name="listing-price"]').value;
+  const category_id = document.querySelector(
+    'select[name="categoryType"]'
+  ).value;
 
   const response = await fetch(`/api/listings`, {
     method: 'POST',
@@ -13,6 +16,7 @@ async function newFormHandler(event) {
       item,
       description,
       price,
+      category_id,
     }),
     headers: {
       'Content-Type': 'application/json',

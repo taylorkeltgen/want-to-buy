@@ -20,7 +20,7 @@ router.get('/', withAuth, (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id', 'label'],
+        attributes: ['id', 'label', 'image_id'],
       },
       {
         model: User,
@@ -57,7 +57,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     include: [
       {
         model: Category,
-        attributes: ['id', 'label'],
+        attributes: ['id', 'label', 'image_id'],
       },
       {
         model: User,

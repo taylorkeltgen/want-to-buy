@@ -5,13 +5,15 @@
   </h2>
   <form class="edit-listing-form">
     <div>
+      <label for="listing-description">Description: </label>
       <input name="listing-description" type="text" value="{{listing.description}}" />
     </div>
     <div>
+      <label for="listing-price">Price: </label>
       <input name="listing-price" type="text" value="{{listing.price}}" />
     </div>
-    <button type="submit">Save listing</button>
-    <button type="button" class="delete-listing-btn">Delete listing</button>
+    <button type="submit" class="btn btn-outline-light bg-primary">Update</button>
+    <button type="button" id="delete-listing-btn" class="btn btn-outline-light bg-danger">Delete</button>
   </form>
 </article>
 

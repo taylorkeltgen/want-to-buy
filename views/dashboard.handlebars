@@ -2,27 +2,40 @@
   <h2>Create New listing</h2>
 
   <form class="new-listing-form">
-    <div>
-      <label for="listing-item">Item</label>
+    <div> 
+      {{!-- Item Input --}}
+      <label for="listing-item">Want To Buy: </label>
       <input type="text" id="listing-item" name="listing-item" />
     </div>
-    <div>
-      <label for="listing-description">Description</label>
-      <textarea name="listing-description" id="listing-description" cols="30" rows="10"></textarea>
+    <div> 
+      {{!-- Description Input --}}
+      <label for="listing-description">Description: </label>
+      <textarea name="listing-description" id="listing-description" cols="30" rows="5"></textarea>
     </div>
-    <div>
-      <label for="listing-price">Price</label>
+    <div> 
+      {{!-- Price Input --}}
+      <label for="listing-price">Willing To Pay: </label>
       <input type="text" id="listing-price" name="listing-price" />
     </div>
-    <div>
-      {{!-- NEEDs Drop down menu for Category selection --}}
-      <label for="category">Select a Category</label>
-      <input type="text" id="category" name="category" />
+    <div> 
+      {{!-- Category Input --}}
+      <label for="roomType"> Select a Category Type:</label>
+      <select id="categoryType" name="categoryType" class="select-dropdown">
+        <option value="empty" disabled selected>--Select--</option>
+        <option value=1>Home Goods</option>
+        <option value=2>Electronics</option>
+        <option value=3>Automotive</option>
+        <option value=4>Sports</option>
+        <option value=5>Apparel</option>
+        <option value=6>Other</option>
+      </select>
     </div>
-    <button type="submit" class="btn">Create</button>
+    {{!-- // Submits the Form --}}
+    <button type="submit" class="btn btn-outline-light bg-success">Create</button>
   </form>
 </section>
 
+{{!-- // This section will show any Listings the User has already created --}}
 {{#if listings.length}}
 <section>
   <h2>Your listings</h2>
@@ -30,11 +43,12 @@
     {{#each listings as |listing|}}
     <li>
       {{> listing-info listing}}
-      <a href="/dashboard/edit/{{listing.id}}" class="edit-link">Edit listing</a>
+      <a href="/dashboard/edit/{{listing.id}}" class="edit-link btn btn-outline-light bg-primary">Edit listing</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
+{{!-- // Required for the form to create the listing --}}
 <script src="/javascript/add-listing.js"></script>
