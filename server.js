@@ -2,15 +2,17 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+require('dotenv').config();
 
 const app = express();
-const PORT = process.envPORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const SESS_SECRET = process.env.SESS_SECRET;
 const sess = {
-  secret: 'SESS_SECRET',
+  secret: SESS_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
