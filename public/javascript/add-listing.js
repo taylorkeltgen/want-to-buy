@@ -31,5 +31,5 @@ async function newFormHandler(event) {
 }
 
 document
-  .querySelector('.new-listing-form')
+  .querySelector('#new-listing-form')
   .addEventListener('submit', newFormHandler);

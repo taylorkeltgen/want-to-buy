@@ -23,12 +23,12 @@ async function editFormHandler(event) {
   });
 
   if (response.ok) {
-    document.location.replace(`/listings/${id}`);
+    document.location.replace(`/dashboard`);
   } else {
     alert(response.statusText);
   }
 }
 
 document
-  .querySelector('.edit-listing-form')
+  .querySelector('#edit-listing-form')
   .addEventListener('submit', editFormHandler);

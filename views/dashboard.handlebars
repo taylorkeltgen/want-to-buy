@@ -1,7 +1,7 @@
 <section>
   <h2>Create New listing</h2>
 
-  <form class="new-listing-form">
+  <form id="new-listing-form">
     <div> 
       {{!-- Item Input --}}
       <label for="listing-item">Want To Buy: </label>
@@ -39,14 +39,14 @@
 {{#if listings.length}}
 <section>
   <h2>Your listings</h2>
-  <ol>
+  <ul>
     {{#each listings as |listing|}}
     <li>
       {{> listing-info listing}}
       <a href="/dashboard/edit/{{listing.id}}" class="edit-link btn btn-outline-light bg-primary">Edit listing</a>
     </li>
     {{/each}}
-  </ol>
+  </ul>
 </section>
 {{/if}}
 

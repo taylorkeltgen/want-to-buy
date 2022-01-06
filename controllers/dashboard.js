@@ -9,6 +9,7 @@ router.get('/', withAuth, (req, res) => {
       // use the ID from the session
       user_id: req.session.user_id,
     },
+    order: [['id', 'DESC']],
     attributes: [
       'id',
       'item',
