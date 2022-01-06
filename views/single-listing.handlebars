@@ -1,12 +1,12 @@
-<article class="listing">
-  <div class="title">
-    <h4>{{listing.item}}</h4>
+<div class="row justify-content-center align-items-center pt-5">
+<div class="card" style="width: 40rem;">
+  <img class="card-img-top" src="{{listing.category.image_id}}" alt="Listing image">
+  <div class="card-body">
+    <h5 class="card-title">{{listing.item}}</h5>
+    <h6 class="card-title">Category: {{listing.category.label}}</h6>
+    <h6 class="card-title">Price: ${{listing.price}}</h6>
+    <p class="card-text">{{listing.description}}</p>
+    <a href="#" class="btn btn-primary">Contact buyer</a>
   </div>
-    <div><h5>Category: </h5>{{listing.category.label}}</div>
-    <div><h5>Description: </h5>{{listing.description}} </div>
-    <div><h5>Price: </h5>{{listing.price}}</div>
-    <div><h5>User: </h5>{{listing.user.username}}</div>
-</article>
-
-
-
+</div>
+</div>
