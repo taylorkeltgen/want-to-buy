@@ -1,9 +1,9 @@
-<article class="listing pl-2">
-  <div class="title">
-    <a href="/listings/{{id}}">{{item}}</a>
-  </div>
+<div class="card" style="width: 20 rem;">
   <div class="meta">
-    <img class="icons" width="200px" height="200px" src="{{category.image_id}}" alt="{{category.label}}">
-    Category: {{category.label}}
+    <img class="icons" width="150px" height="150px" src="{{category.image_id}}" alt="{{category.label}}">
   </div>
-</article>
+  <div class="card-body">
+    <h5 class="card-title"><a href="/listings/{{id}}">{{item}}</a></h5>
+    <p class="card-text">{{listing.description}}</p>
+  </div>
+</div>
