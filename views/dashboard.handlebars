@@ -6,7 +6,7 @@
       <h2>Create New Listing</h2>
       </div>
       <div class="d-flex form-outline form-white">
-        <form id="new-listing-form" class="">
+        <form id="new-listing-form" class="new-listing-form">
           <div class="title form-group"> 
             {{!-- Item Input --}}
             {{!-- <label for="listing-item">Want To Buy: </label> --}}
@@ -35,10 +35,11 @@
               <option value=6>Other</option>
             </select>
           </div>
+          {{!-- // Submits the Form --}}
+        <button type="submit" id="create-listing" class="form-control btn btn-success btn-lg btn-block">Create</button>
         </form>
       </div>
-      {{!-- // Submits the Form --}}
-        <button type="submit" class="btn btn-outline-light bg-success btn-lg mb-4">Create</button>
+      
     </div>
   </section>
 
@@ -51,7 +52,7 @@
         {{#each listings as |listing|}}
         <div class="col p-2">
           {{> listing-info listing}}
-          <a href="/dashboard/edit/{{listing.id}}" class="edit-link btn btn-outline-light bg-primary btn-block">Edit listing</a>
+          <a href="/dashboard/edit/{{listing.id}}" class="edit-link btn btn-outline-info btn-block">Edit listing</a>
         </div>
         {{/each}}
       </div>

@@ -1,21 +1,23 @@
-<article>
+<section class="container">
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
+  <h2 class="text-center">
     Edit Listing
   </h2>
-  <form id="edit-listing-form">
-    <div>
-      <label for="listing-description">Description: </label>
-      <input name="listing-description" type="text" value="{{listing.description}}" />
-    </div>
-    <div>
-      <label for="listing-price">Price: </label>
-      <input name="listing-price" type="text" value="{{listing.price}}" />
-    </div>
-    <button type="submit" class="btn btn-outline-light bg-primary">Update</button>
-    <button type="button" id="delete-listing-btn" class="btn btn-outline-light bg-danger">Delete</button>
-  </form>
-</article>
+  <div class="d-flex">
+    <form id="edit-listing-form" class="d-flex">
+      <div class="form-group">
+        <label for="listing-description">Description: </label>
+        <input name="listing-description" class="form-control" type="text" value="{{listing.description}}" />
+      </div>
+      <div class="form-group">
+        <label for="listing-price">Price: </label>
+        <input name="listing-price" class="form-control" type="text" value="{{listing.price}}" />
+      </div>
+      <button type="submit" class="form-control btn btn-outline-primary">Update</button>
+      <button type="button" id="delete-listing-btn" class="form-control btn btn-outline-danger">Delete</button>
+    </form>
+  </div>
+</section>
 
 
 <script src="/javascript/edit-listing.js"></script>

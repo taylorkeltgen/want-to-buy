@@ -26,10 +26,11 @@ async function newFormHandler(event) {
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
-    alert(response.statusText);
+    console.log(response.statusText);
+    alert('Please fill out all fields.');
   }
 }
 
 document
-  .querySelector('#new-listing-form')
+  .querySelector('.new-listing-form')
   .addEventListener('submit', newFormHandler);
