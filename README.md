@@ -1,29 +1,26 @@
 # Want To Buy
-  [![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
   ## Table of Contents
   - [Description](#description)
-  - [Installation](#installation)
   - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Test](#test)
-  - [License](#license)
+  - [Authors](#authors)
   - [Questions](#questions)
 
   ## Description
-  This command-line application dynamically generates a professional README.md file from a user's input using the Inquirer package. Demo video: https://watch.screencastify.com/v/HjRRAxosDVXRfToOT8c4
-  ## Installation
-  Enter installation instructions here.
+  Tired of searching for things you don't want? Visit Want To Buy (WTB)! While a majority of e-commerce websites put the sellers first, WTB puts the buyers front and center, allowing the user the ability to post what they want and how much they're willing to pay. 
+  
+  **User Story**
+  AS a Buyer I want a place to make a post of an item I “want to buy”. WHEN I make a post I can add a description, select a category, and add a price I'm willing to pay. THEN a Seller is able to contact me via my registered email to continue the transaction.
+
   ## Usage
-  To get started, clone this repo. Then open the index.js file. In Terminal, type node index.js and follow the on-screen prompts.
-  ## Contributing
-  Enter contribution guidelines here.
-  ## Test
-  Enter test instructions here.
-  ## License
-  - https://choosealicense.com/licenses/mpl-2.0/
-  - Permissions of this weak copyleft license are conditioned on making available source code of licensed files and modifications of those files under the same license (or in certain cases, one of the GNU licenses). Copyright and license notices must be preserved. Contributors provide an express grant of patent rights. However, a larger work using the licensed work may be distributed under different terms and without source code for files added in the larger work.
+  Visit *heroku link here* and *include screenshots* and descriptions of the different functions such as home page, login, category filters, dashboard, 
+  
+  ## Authors
+  - Taylor Keltgen
+  - Zak Krutikov
+  - Kevin Aboy
+  - Roshaad Johnson
+
   ## Questions
-  - Visit https://github.com/kevinaboy
-  - Contact me at kaboy@icloud.com
+  - Visit https://github.com/taylorkeltgen/want-to-buy
   
