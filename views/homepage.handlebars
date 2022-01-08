@@ -1,4 +1,4 @@
-<div>
+<div class="text-center">
   <a href="/category/1">Home Goods</a>
   <a href="/category/2">Electronics</a>
   <a href="/category/3">Automotive</a>
@@ -8,11 +8,11 @@
 </div>
 
 <div class="row ml-2 mr-2">
-<div class ="col-md-12 d-flex flex-wrap">
-  {{#each listings as |listing|}}
- <div class="col p-2" >
-    {{> listing-info listing }}
+  <div class="col-md-12 d-flex flex-wrap">
+    {{#each listings as |listing|}}
+    <div class="col p-2">
+      {{> listing-info listing }}
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
-</div>
 </div>
