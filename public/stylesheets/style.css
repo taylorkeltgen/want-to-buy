@@ -2,3 +2,9 @@
   width: 20px;
   height: 20px;
 }
+
+.category-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
