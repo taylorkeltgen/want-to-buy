@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Category, Listing, User } = require('../models');
 const sequelize = require('../config/connection');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 // HOMEPAGE page route
 router.get('/', (req, res) => {
@@ -127,6 +129,43 @@ router.get('/category/:id', (req, res) => {
         listings,
         loggedIn: req.session.loggedIn,
       });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// Search for listings
+router.get('/search', (req, res) => {
+  Listing.findAll({
+    where: {
+      item: { [Op.like]: '%' + req.query.term + '%' },
+    },
+    attributes: [
+      'id',
+      'item',
+      'description',
+      'price',
+      'category_id',
+      'created_at',
+    ],
+    include: [
+      {
+        model: Category,
+        attributes: ['id', 'label', 'image_id'],
+      },
+      {
+        model: User,
+        attributes: ['username', 'email'],
+      },
+    ],
+  })
+    .then((dbListingData) => {
+      const listings = dbListingData.map((listing) =>
+        listing.get({ plain: true })
+      );
+      res.render('homepage', { listings, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
