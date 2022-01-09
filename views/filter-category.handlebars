@@ -1,11 +1,32 @@
-<div class="text-center" id="category-bar">
-  <a href="/category/1">Home Goods</a>
-  <a href="/category/2">Electronics</a>
-  <a href="/category/3">Automotive</a>
-  <a href="/category/4">Sports</a>
-  <a href="/category/5">Apparel</a>
-  <a href="/category/6">Other</a>
+  {{! CAROUSEL — STARTS }}
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://want-to-buy.s3.us-east-2.amazonaws.com/three-easy-steps.png"
+          alt="three easy steps graphic click to get started">
+      </div>
+      {{!-- <div class="carousel-item">
+        <img class="d-block w-100" src="..." alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="..." alt="Third slide">
+      </div> --}}
+    </div>
+  </div>
+
+  {{! CAROUSEL — ENDS }}
+
+<div class="text-center mt-3 mb-3" id="category-bar">
+  <a class="btn btn-outline-secondary bg-light" href="/">All Categories</a>
+  <a class="btn btn-outline-secondary bg-light" href="/category/1">Home Goods</a>
+  <a class="btn btn-outline-secondary bg-light" href="/category/2">Electronics</a>
+  <a class="btn btn-outline-secondary bg-light" href="/category/3">Automotive</a>
+  <a class="btn btn-outline-secondary bg-light" href="/category/4">Sports</a>
+  <a class="btn btn-outline-secondary bg-light" href="/category/5">Apparel</a>
+  <a class="btn btn-outline-secondary bg-light" href="/category/6">Other</a>
 </div>
+
+<hr>
 
 <div class="row ml-2 mr-2">
   <div class="col-md-12 d-flex flex-wrap">
