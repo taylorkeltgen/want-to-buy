@@ -6,26 +6,26 @@
       <h2>Create New Listing</h2>
       </div>
       <div class="d-flex form-outline form-white">
-        <form id="new-listing-form" class="new-listing-form">
-          <div class="title form-group"> 
+        <form id="new-listing-form" class="new-listing-form m-4">
+          <div class="title form-group mb-2"> 
             {{!-- Item Input --}}
             {{!-- <label for="listing-item">Want To Buy: </label> --}}
             <input class="form-control" type="text" id="listing-item" name="listing-item" placeholder="Want To Buy.." />
           </div>
-          <div class="description form-group"> 
+          <div class="description form-group mb-2"> 
             {{!-- Description Input --}}
             {{!-- <label for="listing-description">Description: </label> --}}
             <textarea class="form-control" name="listing-description" id="listing-description" cols="30" rows="5" placeholder="Description.."></textarea>
           </div>
-          <div class="price form-group"> 
+          <div class="price form-group mb-2"> 
             {{!-- Price Input --}}
             {{!-- <label for="listing-price">$:</label> --}}
             <input class="form-control" type="text" id="listing-price" name="listing-price" placeholder="$ Amount.."/>
           </div>
-          <div class="category form-group"> 
+          <div class="category form-group mb-2"> 
             {{!-- Category Input --}}
-            <label for="roomType"> Select a Category Type:</label>
-            <select  id="categoryType" name="categoryType" class="select-dropdown form-control">
+            <label for="roomType" class="mb-1"> Select a Category Type:</label>
+            <select  id="categoryType" name="categoryType" class="select-dropdown form-control mb-2">
               <option value="empty" disabled selected>Choose..</option>
               <option value=1>Home Goods</option>
               <option value=2>Electronics</option>
