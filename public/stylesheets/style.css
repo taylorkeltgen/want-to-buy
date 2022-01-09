@@ -3,6 +3,10 @@
   height: 20px;
 } */
 
+#logo {
+  font-family: 'Leckerli One', cursive;
+}
+
 #category-bar {
   display: flex;
   align-items: center;
@@ -12,13 +16,18 @@
 
 #category-bar a:visited{
   color:black;
-  text-decoration: none
+  text-decoration: none;
 }
 
 #category-bar a:link{
   color:black;
-  text-decoration: none
+  text-decoration: none;
 }
+
+/* #category-bar a:hover{
+  background-color: lightgrey;
+  border-radius: 1px;
+} */
 
 .card {
   border: none !important;
