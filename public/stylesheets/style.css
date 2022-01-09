@@ -1,10 +1,25 @@
-.icons {
+/* .icons {
   width: 20px;
   height: 20px;
-}
+} */
 
-.category-bar {
+#category-bar {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: red
+}
+
+#category-bar a:visited{
+  color:black;
+  text-decoration: none
+}
+
+#category-bar a:link{
+  color:black;
+  text-decoration: none
+}
+
+.card {
+  border: none !important;
 }
