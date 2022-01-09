@@ -7,7 +7,7 @@
   - [Questions](#questions)
 
   ## Description
-  Visit Want To Buy (WTB) and create a post of what you want to buy and sellers will contact you if they have the item that matches your description and price.
+  Want To Buy (WTB) was designed to put buyers front and center, letting them create posts of what they want so sellers can contact them if they have an item that matches their description and price.
   
   **User Story**
 
